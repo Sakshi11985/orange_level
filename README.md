@@ -15,6 +15,14 @@ The system acts as a centralized firewall where the controller decides whether c
 The objective of this project is to design and implement an SDN-based firewall that demonstrates centralized control, dynamic packet handling, and enforcement of access control policies.
 
 ---
+2. Justification for Topology and Design Choices
+Topology Justification
+
+A single switch topology with three hosts is used because it is simple and sufficient to demonstrate controller-based decision making. It allows testing of both allowed and blocked communication scenarios clearly.
+
+Design Choices
+
+The POX controller is used because it is lightweight and suitable for implementing OpenFlow-based logic. PacketIn events are handled to inspect packets dynamically instead of installing static flow rules. This enables flexible and real-time access control decisions.
 
 ## System Architecture
 
@@ -29,6 +37,15 @@ Communication Protocol:
 * OpenFlow is used between switch and controller
 
 ---
+4. Performance Analysis
+Latency
+
+Latency is measured using ping. It represents the round-trip time taken for packets to travel between hosts. For allowed communication, latency is low because packets are forwarded normally.
+
+Throughput
+
+Throughput is measured using iperf. It represents the data transfer rate between hosts in Mbps. It is tested between allowed hosts (h1 and h2).
+
 
 ## Topology
 
